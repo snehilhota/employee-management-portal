@@ -1,0 +1,25 @@
+# Java / Spring Boot
+backend/target/
+backend/HELP.md
+*.class
+*.jar
+*.war
+*.log
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# React / Node
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.env
+frontend/.env.local
+
+# Env / secrets
+.env
+application-local.properties
+application-secrets.yml
