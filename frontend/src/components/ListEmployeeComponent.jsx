@@ -31,34 +31,60 @@ const ListEmployeeComponent = () => {
     }
 
     return (
-        <div className='container'>
-            <h2 className='text-center'>List of Employees</h2>
-            <button className='btn btn-primary mb-2' onClick={addNewEmployee}>Add Employee</button>
-            <table className='table table-striped table-bordered'>
-                <thead>
-                    <tr>
-                        <th>Employee ID</th>
-                        <th>Employee First Name</th>
-                        <th>Employee Last Name</th>
-                        <th>Employee Email ID</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {employees.map(employee => (
-                        <tr key={employee.id}>
-                            <td>{employee.id}</td>
-                            <td>{employee.firstName}</td>
-                            <td>{employee.lastName}</td>
-                            <td>{employee.email}</td>
-                            <td>
-                                <button className='btn btn-info' onClick={() => updateEmployee(employee.id)}>Update</button>
-                                <button className='btn btn-danger' onClick={() => removeEmployee(employee.id)}>Delete</button>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+        <div className='container mt-5'>
+            <div className='card shadow-sm'>
+                <div className='card-body'>
+
+                    <div className='d-flex justify-content-between align-items-center mb-4'>
+                        <h2 className='card-title mb-0'>List of Employees</h2>
+                        <button className='btn btn-primary' onClick={addNewEmployee}>
+                            + Add Employee
+                        </button>
+                    </div>
+
+                    {/* Removed table-responsive wrapper, added 'mobile-table' class */}
+                    <table className='table table-striped table-hover table-bordered align-middle mobile-table'>
+                        <thead className='table-dark'>
+                            <tr>
+                                <th>Employee ID</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email ID</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {employees.map(employee => (
+                                <tr key={employee.id}>
+                                    {/* Added data-labels for mobile view */}
+                                    <td data-label="Employee ID">{employee.id}</td>
+                                    <td data-label="First Name">{employee.firstName}</td>
+                                    <td data-label="Last Name">{employee.lastName}</td>
+                                    <td data-label="Email ID">{employee.email}</td>
+                                    <td data-label="Actions">
+                                        {/* Button Fix: Flexbox layout, reduced height (py-1), matching lengths */}
+                                        <div className='d-flex flex-column flex-md-row gap-2 justify-content-md-start justify-content-end'>
+                                            <button
+                                                className='btn btn-outline-primary btn-sm py-1'
+                                                style={{ minWidth: '80px' }}
+                                                onClick={() => updateEmployee(employee.id)}>
+                                                Update
+                                            </button>
+                                            <button
+                                                className='btn btn-outline-danger btn-sm py-1'
+                                                style={{ minWidth: '80px' }}
+                                                onClick={() => removeEmployee(employee.id)}>
+                                                Delete
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
         </div>
     )
 }

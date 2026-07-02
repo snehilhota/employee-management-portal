@@ -1,9 +1,51 @@
-.footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 50px;
-    background-color: black;
-    text-align: center;
-    color: white;
+/* App.css */
+
+body {
+    background-color: #f8f9fa;
+    padding-bottom: 70px;
+}
+
+@media (max-width: 768px) {
+
+    .mobile-table thead {
+        display: none;
+    }
+
+    .mobile-table,
+    .mobile-table tbody,
+    .mobile-table tr,
+    .mobile-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .mobile-table tr {
+        margin-bottom: 1.5rem;
+        border: 1px solid #dee2e6;
+        border-radius: 0.5rem;
+        background-color: #fff;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    }
+
+    .mobile-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: right;
+        border: none;
+        border-bottom: 1px solid #f8f9fa;
+        padding: 0.75rem 1rem;
+    }
+
+    .mobile-table td:last-child {
+        border-bottom: none;
+    }
+
+    .mobile-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #495057;
+        text-align: left;
+        padding-right: 1rem;
+    }
 }
