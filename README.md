@@ -124,17 +124,9 @@ npm run dev
 
 The app will be available at `http://localhost:5173` by default.
 
-## Screenshots
-
-_Add screenshots of the employee list and form here to showcase the UI._
-
 ## Future Improvements
 
 - Input validation and error handling on the frontend
 - Pagination and search/filter for the employee list
 - Authentication and role-based access
 - Dockerize backend, frontend, and MySQL for one-command setup
-
-## License
-
-Not currently specified — consider adding a `LICENSE` file (e.g., MIT) if you plan to make this project open source.
